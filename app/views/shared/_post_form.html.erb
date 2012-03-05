@@ -1,0 +1,10 @@
+<% #assumes it's part of a flow container %>
+	<%= semantic_form_for @post do |f| %>
+		<%= f.semantic_errors %>
+		<%= f.inputs do %>
+			<%= f.input :content, :as=>'text', :input_html => { :class=>'autogrow span6', :rows=>5}%>
+		<% end %>
+		<%= f.actions do %>
+			<%= f.action(:submit) %>
+		<% end %>
+	<% end %>

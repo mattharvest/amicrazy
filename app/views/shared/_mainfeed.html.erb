@@ -1,0 +1,16 @@
+<% #assumes itself to be WITHIN a fluid container %>
+<% @allposts=Post.find(:all) %>
+<% unless @allposts.empty? %>
+	<% @allposts.each do |p| %>
+		<div class="row-fluid">
+			<div class="span4">
+				<h3><%= p.content %></h3>
+			</div>
+		</div>
+		<div class="row-fluid">
+			<div class="span8 offset4">
+				Post posted <%= time_ago_in_words(p.created_at) %> ago by <%= link_to p.user.name, p.user %>
+			</div>
+		</div>
+	<% end %>
+<% end %>

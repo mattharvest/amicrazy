@@ -1,0 +1,21 @@
+<% #assumes a flow container %>
+<div class="row-fluid">
+	<div class="span1">
+		<% if current_user?(post.user) %>
+			<a class="btn btn-danger btn-mini" href=
+				<%= link_to "delete", post, :method => :delete,
+											:confirm => "You sure?",
+											:title => post.content %>
+				</a>
+		<% end %>
+	</div>
+	<div class="span4">
+		<%= post.content %>
+	</div>
+
+</div>
+<div class="row-fluid">
+	<div class="span8 offset4">
+		Post posted <%= time_ago_in_words(post.created_at) %> ago by <%=post.user.name%>
+	</div>
+</div>

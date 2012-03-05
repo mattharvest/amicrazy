@@ -1,0 +1,11 @@
+<div class="well">	
+	<%= semantic_form_for @post do |f| %>
+		<%= f.semantic_errors %>
+		<%= f.inputs do %>
+			<%= f.input :content %>
+		<% end %>
+		<%= f.actions do %>
+			<%= f.action(:submit) %>
+		<% end %>
+	<% end %>
+</div>

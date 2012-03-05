@@ -1,0 +1,12 @@
+<div class="hero-unit">
+	<%= gravatar_image_tag @user.email %>
+	<h1><%= @user.name %></h1> <p><%= @user.email %></p>
+	<% if @user.admin? %>
+		<h5>ADMINISTRATOR</h5>
+	<% end %>
+</div>
+	
+	<% unless @user.posts.empty? %>
+		<%= render @posts %>
+	<% end %>
+</h1>
