@@ -2,10 +2,9 @@
 <div class="row-fluid">
 	<div class="span1">
 		<% if current_user?(post.user) %>
-			<a class="btn btn-danger btn-mini" href=
 				<%= link_to "delete", post, 	:method => :delete, 
 												:confirm => "You sure?", 
-												:title => post.content %>></a>
+												:title => post.content %>
 		<% end %>
 	</div>
 	<div class="span4">
